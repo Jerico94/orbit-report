@@ -22,10 +22,28 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('orbit-report');
   });
 
-  it('should render title in a h1 tag', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to orbit-report!');
+  import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+
+  import { OrbitListComponent } from './orbit-list.component';
+  
+  describe('OrbitListComponent', () => {
+    let component: OrbitListComponent;
+    let fixture: ComponentFixture<OrbitListComponent>;
+  
+    beforeEach(async(() => {
+      TestBed.configureTestingModule({
+        declarations: [ OrbitListComponent ]
+      })
+      .compileComponents();
+    }));
+  
+    beforeEach(() => {
+      fixture = TestBed.createComponent(OrbitListComponent);
+      component = fixture.componentInstance;
+      fixture.detectChanges();
+    });
+  
+    it('should create', () => {
+      expect(component).toBeTruthy();
+    });
   });
-});
